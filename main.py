@@ -3,7 +3,7 @@ import random
 destinations = ['California', 'Utah', 'Colorado', 'Florida', 'New York' ]
 restaurants = ['Popeyes', 'MC Donalds', 'Applebees', 'Texas Road House', 'Gas Station']
 transportation = ['Space Ship', 'Plane', 'Train', 'Bike', 'Bus']
-entertainment = ['Movies', 'TV shows', 'Magazines', 'Nap taking', '']
+entertainment = ['Movie', 'TV show', 'Magazine', 'Nap', 'Draw']
 ran_value1 = random.randint(0, 4)
 ran_value2 = random.randint(0, 4)
 ran_value3 = random.randint(0, 4)
@@ -39,7 +39,7 @@ while dest == 'n':
 
 # mode of transportation choices
 while True:
-    trans = input(f'Do you want to use {transportation[ran_value1]} ? Enter y/n ')
+    trans = input(f'For transportatino do you want to use {transportation[ran_value1]} ? Enter y/n ')
     if trans == 'y':
         trans = transportation[ran_value1]
         print('Great choice!')
@@ -64,11 +64,33 @@ while trans == 'n':
             print(f'Looks like we are out of choices {user_name} please try again :(')
             break
 # entertainment random choices
-
-# ability to (re)select random destinations, restaurants, mode of transportation, and/or entertainment
+while True:
+    ent = input(f'For entertainment do you want to {entertainment[ran_value1]} ? Enter y/n ')
+    if ent == 'y':
+        ent = entertainment[ran_value1]
+        print('Great choice!')
+        break
+    elif ent == 'n':
+        break
+while ent == 'n':
+        ent = input(f'or {entertainment[ran_value2]} ? Enter y/n ')
+        if ent == 'y':
+            ent = entertainment[ran_value2]
+            print('Perfect!')
+            break
+        elif ent == 'n':
+            break
+while ent == 'n':
+        if ent == 'y':
+            ent = input(f'or {destinations[ran_value3]} ? Enter y/n ')
+            ent = entertainment[ran_value3]
+            print('Nice choise!')
+            break
+        elif trans == 'n':
+            print(f'Looks like we are out of choices {user_name} please try again :(')
+            break
 
 # ability to confirm trip completion
-'''
 user_is_done = input('if this is your ideal trip Enter y to confirm and n to end session and retry. Enter y/n ')
 if user_is_done == 'y':
 '''
